@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Hotkey = (function () {
+var Hotkey = /** @class */ (function () {
     /**
      * Creates a new Hotkey for Mousetrap binding
      *

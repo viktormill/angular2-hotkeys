@@ -20,9 +20,10 @@ __export(require("./src/hotkey.model"));
 __export(require("./src/hotkey.options"));
 __export(require("./src/hotkeys.directive"));
 __export(require("./src/hotkeys.service"));
-var HotkeyModule = HotkeyModule_1 = (function () {
+var HotkeyModule = /** @class */ (function () {
     function HotkeyModule() {
     }
+    HotkeyModule_1 = HotkeyModule;
     HotkeyModule.forRoot = function (options) {
         if (options === void 0) { options = {}; }
         return {
@@ -33,15 +34,15 @@ var HotkeyModule = HotkeyModule_1 = (function () {
             ]
         };
     };
+    HotkeyModule = HotkeyModule_1 = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule],
+            exports: [hotkeys_directive_1.HotkeysDirective, cheatsheet_component_1.CheatSheetComponent],
+            declarations: [hotkeys_directive_1.HotkeysDirective, cheatsheet_component_1.CheatSheetComponent]
+        })
+    ], HotkeyModule);
     return HotkeyModule;
+    var HotkeyModule_1;
 }());
-HotkeyModule = HotkeyModule_1 = __decorate([
-    core_1.NgModule({
-        imports: [common_1.CommonModule],
-        exports: [hotkeys_directive_1.HotkeysDirective, cheatsheet_component_1.CheatSheetComponent],
-        declarations: [hotkeys_directive_1.HotkeysDirective, cheatsheet_component_1.CheatSheetComponent]
-    })
-], HotkeyModule);
 exports.HotkeyModule = HotkeyModule;
-var HotkeyModule_1;
 //# sourceMappingURL=index.js.map

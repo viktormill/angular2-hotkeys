@@ -13,7 +13,7 @@ var core_1 = require("@angular/core");
 var hotkey_model_1 = require("./hotkey.model");
 var hotkeys_service_1 = require("./hotkeys.service");
 require("mousetrap");
-var HotkeysDirective = (function () {
+var HotkeysDirective = /** @class */ (function () {
     function HotkeysDirective(_hotkeysService, _elementRef) {
         this._hotkeysService = _hotkeysService;
         this._elementRef = _elementRef;
@@ -42,18 +42,18 @@ var HotkeysDirective = (function () {
         }
         this._hotkeysService.add(this.oldHotkeys);
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], HotkeysDirective.prototype, "hotkeys", void 0);
+    HotkeysDirective = __decorate([
+        core_1.Directive({
+            selector: '[hotkeys]',
+            providers: [hotkeys_service_1.HotkeysService]
+        }),
+        __metadata("design:paramtypes", [hotkeys_service_1.HotkeysService, core_1.ElementRef])
+    ], HotkeysDirective);
     return HotkeysDirective;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], HotkeysDirective.prototype, "hotkeys", void 0);
-HotkeysDirective = __decorate([
-    core_1.Directive({
-        selector: '[hotkeys]',
-        providers: [hotkeys_service_1.HotkeysService]
-    }),
-    __metadata("design:paramtypes", [hotkeys_service_1.HotkeysService, core_1.ElementRef])
-], HotkeysDirective);
 exports.HotkeysDirective = HotkeysDirective;
 //# sourceMappingURL=hotkeys.directive.js.map

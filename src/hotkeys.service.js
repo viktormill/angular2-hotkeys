@@ -13,16 +13,16 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var hotkey_options_1 = require("./hotkey.options");
-var Subject_1 = require("rxjs/Subject");
+var rxjs_1 = require("rxjs");
 var core_1 = require("@angular/core");
 var hotkey_model_1 = require("./hotkey.model");
 require("mousetrap");
-var HotkeysService = (function () {
+var HotkeysService = /** @class */ (function () {
     function HotkeysService(options) {
         this.options = options;
         this.hotkeys = [];
         this.pausedHotkeys = [];
-        this.cheatSheetToggle = new Subject_1.Subject();
+        this.cheatSheetToggle = new rxjs_1.Subject();
         this._preventIn = ['INPUT', 'SELECT', 'TEXTAREA'];
         Mousetrap.prototype.stopCallback = function (event, element, combo, callback) {
             // if the element has the class "mousetrap" then no need to stop
@@ -161,12 +161,12 @@ var HotkeysService = (function () {
     HotkeysService.prototype.findHotkey = function (hotkey) {
         return this.hotkeys.indexOf(hotkey);
     };
+    HotkeysService = __decorate([
+        core_1.Injectable(),
+        __param(0, core_1.Inject(hotkey_options_1.HotkeyOptions)),
+        __metadata("design:paramtypes", [Object])
+    ], HotkeysService);
     return HotkeysService;
 }());
-HotkeysService = __decorate([
-    core_1.Injectable(),
-    __param(0, core_1.Inject(hotkey_options_1.HotkeyOptions)),
-    __metadata("design:paramtypes", [Object])
-], HotkeysService);
 exports.HotkeysService = HotkeysService;
 //# sourceMappingURL=hotkeys.service.js.map

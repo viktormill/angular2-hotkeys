@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy, Input} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {HotkeysService} from './hotkeys.service';
 import {Hotkey} from './hotkey.model';
 
@@ -125,7 +125,7 @@ import {Hotkey} from './hotkey.model';
 })
 export class CheatSheetComponent implements OnInit, OnDestroy {
     helpVisible = false;
-    @Input() title: string = 'Keyboard Shortcuts:';
+    @Input() title = 'Keyboard Shortcuts:';
     subscription: Subscription;
 
     hotkeys: Hotkey[];
